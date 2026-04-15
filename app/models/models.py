@@ -31,7 +31,9 @@ class Source(Base):
 
 class Assessment(Base):
     __tablename__ = "assessments"
-
+    
+    status = Column(String(20), nullable=False, default="pending")  # pending|running|done|failed
+    error_message = Column(Text, nullable=True)
     id = Column(Integer, primary_key=True, index=True)
     company_id = Column(Integer, ForeignKey("companies.id"), nullable=False, index=True)
     score = Column(Float, nullable=False, default=0.0)

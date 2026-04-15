@@ -23,7 +23,6 @@ def ui_page():
       --ok: #16a34a;
       --warn: #f59e0b;
       --bad: #dc2626;
-      --accent: #4f46e5;
       --border: #253055;
     }
     * { box-sizing: border-box; }
@@ -45,43 +44,39 @@ def ui_page():
       box-shadow: 0 8px 30px rgba(0,0,0,.25);
     }
     .grid-2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    label { display:block; font-size: 12px; color: var(--muted); margin-top: 10px; margin-bottom: 6px; }
     input {
       width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid var(--border);
       background: #0c1328; color: var(--text); outline: none;
     }
-    input:focus { border-color: #4457aa; box-shadow: 0 0 0 2px rgba(79,70,229,.2); }
     button {
       margin-top: 12px; width: 100%; padding: 12px;
       border: none; border-radius: 10px; cursor: pointer;
-      color: white; font-weight: 600;
+      color: white; font-weight: 700;
       background: linear-gradient(90deg, #4f46e5, #2563eb);
     }
+    button:disabled { opacity: .6; cursor: not-allowed; }
     .kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
-    .kpi {
-      background: #0c1328; border: 1px solid var(--border); border-radius: 12px; padding: 12px;
-    }
-    .kpi .v { font-size: 24px; font-weight: 700; margin-top: 6px; }
+    .kpi { background: #0c1328; border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+    .kpi .v { font-size: 24px; font-weight: 800; margin-top: 6px; }
     .signals {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 10px;
       margin-top: 10px;
     }
-    .signal {
-      border: 1px solid var(--border); border-radius: 12px; background: #0c1328; padding: 12px;
-    }
+    .signal { border: 1px solid var(--border); border-radius: 12px; background: #0c1328; padding: 12px; }
     .signal h4 { margin: 0 0 8px; font-size: 14px; }
     .badge {
-      display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
-      margin-bottom: 6px;
+      display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 800;
+      margin-bottom: 6px; border: 1px solid transparent;
     }
-    .ok { background: rgba(22,163,74,.2); color: #86efac; border: 1px solid rgba(22,163,74,.35); }
-    .warn { background: rgba(245,158,11,.2); color: #fcd34d; border: 1px solid rgba(245,158,11,.35); }
-    .bad { background: rgba(220,38,38,.2); color: #fca5a5; border: 1px solid rgba(220,38,38,.35); }
+    .ok { background: rgba(22,163,74,.2); color: #86efac; border-color: rgba(22,163,74,.35); }
+    .warn { background: rgba(245,158,11,.2); color: #fcd34d; border-color: rgba(245,158,11,.35); }
+    .bad { background: rgba(220,38,38,.2); color: #fca5a5; border-color: rgba(220,38,38,.35); }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
     pre {
       background: #0c1328; border: 1px solid var(--border); border-radius: 10px;
-      padding: 10px; max-height: 320px; overflow: auto; font-size: 12px;
+      padding: 10px; max-height: 360px; overflow: auto; font-size: 12px;
+      white-space: pre-wrap;
     }
     a { color: #93c5fd; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -98,19 +93,20 @@ def ui_page():
 
     <div class="panel grid-2">
       <div>
-        <div class="field">
-          <label>Company Name</label>
-          <input id="companyName" placeholder="e.g. Notion" />
-        </div>
-        <div class="field">
-          <label>Website URL</label>
-          <input id="website" placeholder="https://www.notion.so" />
-        </div>
-        <div class="field">
-          <label>Extra URLs (comma separated)</label>
-          <input id="extraUrls" placeholder="https://example.com/security, https://example.com/privacy" />
-        </div>
-        <button onclick="runFlow()">Run Full Assessment</button>
+        <label>Company Name</label>
+        <input id="companyName" placeholder="e.g. Notion" />
+
+        <label>Website URL</label>
+        <input id="website" placeholder="https://www.notion.so" />
+
+        <label>Extra URLs (comma separated)</label>
+        <input id="extraUrls" placeholder="https://example.com/security, https://example.com/privacy" />
+
+        <label>API Key</label>
+        <input id="apiKey" placeholder="super-secret-key" />
+
+        <button id="runBtn" type="button" onclick="runFlow()">Run Full Assessment</button>
+        <div class="small" style="margin-top:8px;">Tip: open DevTools → Network to see API calls.</div>
       </div>
 
       <div class="panel" style="margin:0;">
@@ -138,7 +134,7 @@ def ui_page():
         <div id="links">No report generated yet.</div>
       </div>
       <div class="panel">
-        <h3 style="margin-top:0;">Raw JSON</h3>
+        <h3 style="margin-top:0;">Raw JSON / Logs</h3>
         <pre id="output">Waiting...</pre>
       </div>
     </div>
@@ -147,6 +143,11 @@ def ui_page():
 <script>
 const API = window.location.origin;
 let radar;
+
+function logLine(msg) {
+  const out = document.getElementById("output");
+  out.textContent = `[${new Date().toISOString()}] ${msg}\\n\\n` + out.textContent;
+}
 
 function statusClass(v, passed) {
   if (passed === false || (v !== null && v < 0.5)) return "bad";
@@ -170,7 +171,6 @@ function renderSignals(signals) {
     wrap.innerHTML = '<div class="small">No signals found.</div>';
     return;
   }
-
   signals.forEach(s => {
     const cls = statusClass(s.numeric_value, s.passed);
     const st = statusText(s.numeric_value, s.passed);
@@ -217,53 +217,69 @@ function renderRadar(signals) {
           ticks: { backdropColor: "transparent", color: "#94a3b8", stepSize: 0.2 }
         }
       },
-      plugins: {
-        legend: { labels: { color: "#cbd5e1" } }
-      }
+      plugins: { legend: { labels: { color: "#cbd5e1" } } }
     }
   });
 }
 
+async function fetchJson(url, options) {
+  const res = await fetch(url, options);
+  const text = await res.text();
+  let data;
+  try { data = JSON.parse(text); } catch { data = { raw: text }; }
+  if (!res.ok) {
+    const msg = `HTTP ${res.status} ${res.statusText} from ${url}: ` + JSON.stringify(data);
+    throw new Error(msg);
+  }
+  return data;
+}
+
 async function runFlow() {
+  const btn = document.getElementById("runBtn");
+  btn.disabled = true;
+
   const companyName = document.getElementById("companyName").value.trim();
   const website = document.getElementById("website").value.trim();
   const extra = document.getElementById("extraUrls").value.trim();
+  const apiKey = document.getElementById("apiKey").value.trim();
 
-  const output = document.getElementById("output");
   const links = document.getElementById("links");
-
-  if (!companyName || !website) {
-    alert("Please provide company name and website.");
-    return;
-  }
-
-  output.textContent = "Running...";
+  const out = document.getElementById("output");
+  out.textContent = "Running...\\n";
   links.innerHTML = "Generating...";
-  document.getElementById("signals").innerHTML = "";
 
   try {
+    if (!companyName || !website) {
+      alert("Please provide company name and website.");
+      return;
+    }
+
     const extra_urls = extra ? extra.split(",").map(s => s.trim()).filter(Boolean) : [];
 
-    // 1) intake
-    const intakeRes = await fetch(`${API}/intake/company`, {
+    const headers = { "Content-Type": "application/json" };
+    if (apiKey) headers["x-api-key"] = apiKey;
+
+    logLine("Button clicked. Starting intake...");
+
+    const intake = await fetchJson(`${API}/intake/company`, {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers,
       body: JSON.stringify({ company_name: companyName, website, extra_urls })
     });
-    const intake = await intakeRes.json();
-    if (!intakeRes.ok) throw new Error(JSON.stringify(intake));
+    logLine("Intake OK. companyId=" + intake.company.id);
+
     const companyId = intake.company.id;
 
-    // 2) run assessment
-    const runRes = await fetch(`${API}/assessment/run/${companyId}`, { method: "POST" });
-    const run = await runRes.json();
-    if (!runRes.ok) throw new Error(JSON.stringify(run));
+    logLine("Starting assessment...");
+    const run = await fetchJson(`${API}/assessment/run/${companyId}`, {
+      method: "POST",
+      headers
+    });
     const assessmentId = run.assessment_id;
+    logLine("Assessment started. assessmentId=" + assessmentId);
 
-    // 3) get details
-    const detailsRes = await fetch(`${API}/assessment/${assessmentId}`);
-    const details = await detailsRes.json();
-    if (!detailsRes.ok) throw new Error(JSON.stringify(details));
+    logLine("Fetching assessment details...");
+    const details = await fetchJson(`${API}/assessment/${assessmentId}`, { headers });
 
     // KPIs
     document.getElementById("kpiScore").textContent = `${details.score}/100`;
@@ -271,21 +287,22 @@ async function runFlow() {
     document.getElementById("kpiSignals").textContent = `${(details.signals || []).length}`;
     document.getElementById("kpiAssessment").textContent = `${assessmentId}`;
 
-    // signal cards + radar
     renderSignals(details.signals || []);
     renderRadar(details.signals || []);
 
-    // report links
     links.innerHTML = `
       <p><a target="_blank" href="${API}/report/markdown/${assessmentId}">Open Markdown report</a></p>
       <p><a target="_blank" href="${API}/report/pdf/${assessmentId}">Download PDF report</a></p>
       <p class="small">Company ID: ${companyId}</p>
     `;
 
-    output.textContent = JSON.stringify({ intake, run, details }, null, 2);
+    out.textContent = JSON.stringify({ intake, run, details }, null, 2);
+    logLine("Done.");
   } catch (e) {
-    output.textContent = "Error:\\n" + e.message;
+    logLine("ERROR: " + e.message);
     links.innerHTML = '<span class="badge bad">FAILED</span>';
+  } finally {
+    btn.disabled = false;
   }
 }
 </script>

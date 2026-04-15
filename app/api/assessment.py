@@ -7,7 +7,10 @@ from app.services.assessment_runner import run_assessment_job
 from fastapi import Depends
 from app.core.auth import require_api_key
 
-router = APIRouter(prefix="/assessment", tags=["assessment"])
+router = APIRouter(prefix="/assessment", tags=["assessment"], dependencies=[Depends(require_api_key)])
+router = APIRouter(prefix="/report", tags=["report"], dependencies=[Depends(require_api_key)])
+
+
 
 @router.post("/run/{company_id}")
 async def run_assessment(company_id: int, background_tasks: BackgroundTasks, db: Session = Depends(get_db), _=Depends(require_api_key)):
