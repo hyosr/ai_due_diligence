@@ -134,7 +134,32 @@ if run_btn:
         details_url = f"{cfg.base_url}/assessment/{assessment_id}"
 
         log("Fetching assessment details...")
-        details = call_json("GET", details_url, cfg, payload=None, timeout=60)
+        # details = call_json("GET", details_url, cfg, payload=None, timeout=60)
+
+
+        
+        # NEW
+        candidate_paths = [
+            f"/assessment/{assessment_id}",
+            f"/report/{assessment_id}",
+            f"/report/details/{assessment_id}",
+            f"/report/result/{assessment_id}",
+            ]
+        details = None
+        last_err = None
+
+        for p in candidate_paths:
+            try:
+                details = call_json("GET", f"{cfg.base_url}{p}", cfg, payload=None, timeout=60)
+                log(f"Details endpoint found: {p}")
+                break
+            except Exception as e:
+                last_err = e
+
+        if details is None:
+            raise RuntimeError(f"No details endpoint matched. Last error: {last_err}")
+
+
 
         # If status exists and not done, poll a bit
         if "status" in details:

@@ -7,7 +7,7 @@ from app.models.models import Company, Source
 from fastapi import Depends
 from app.core.auth import require_api_key
 
-router = APIRouter(prefix="/intake", tags=["intake"])
+router = APIRouter(prefix="/intake", tags=["intake"], dependencies=[Depends(require_api_key)])
 
 @router.post("/company")
 def intake_company(payload: IntakeRequest, db: Session = Depends(get_db), _=Depends(require_api_key)): 

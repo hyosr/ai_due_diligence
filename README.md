@@ -5,7 +5,7 @@
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # Linux/macOS
-# .venv\Scripts\activate    # Windows
+.venv\Scripts\activate    # Windows
 
 pip install -r requirements.txt
 uvicorn app.main:app --reload
@@ -13,6 +13,9 @@ uvicorn app.main:app --reload
 
 API docs:
 - http://127.0.0.1:8000/docs
+
+UI:
+-http://127.0.0.1:8000/ui 
 
 ## Main flow
 1. `POST /intake/company` (company name + website + optional URLs)
