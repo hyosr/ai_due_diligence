@@ -1,0 +1,1584 @@
+{
+  "records": [
+    {
+      "service_name": "LOW_01",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.16449999999999998,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_02",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1805,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_03",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.07500000000000001,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1965,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_04",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1725,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_05",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.07500000000000001,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1885,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_06",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.16049999999999998,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_07",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.07500000000000001,
+        "config_risk": 0.35,
+        "reputation_risk": 0.20450000000000002,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_08",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1845,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_09",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.07500000000000001,
+        "config_risk": 0.35,
+        "reputation_risk": 0.1925,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "LOW_10",
+      "expected_risk_level": "LOW",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.0,
+        "config_risk": 0.35,
+        "reputation_risk": 0.16849999999999998,
+        "compliance_bonus": 1.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_01",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.15000000000000002,
+        "config_risk": 0.35,
+        "reputation_risk": 0.30050000000000004,
+        "compliance_bonus": 0.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_02",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.22499999999999998,
+        "config_risk": 0.35,
+        "reputation_risk": 0.3125,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_03",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.15000000000000002,
+        "config_risk": 0.55,
+        "reputation_risk": 0.28450000000000003,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_04",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.30000000000000004,
+        "config_risk": 0.35,
+        "reputation_risk": 0.29250000000000004,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_05",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.07500000000000001,
+        "config_risk": 0.55,
+        "reputation_risk": 0.26849999999999996,
+        "compliance_bonus": 0.5,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_06",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.22499999999999998,
+        "config_risk": 0.55,
+        "reputation_risk": 0.27249999999999996,
+        "compliance_bonus": 0.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_07",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.15000000000000002,
+        "config_risk": 0.35,
+        "reputation_risk": 0.3245,
+        "compliance_bonus": 0.5,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_08",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.15000000000000002,
+        "config_risk": 0.55,
+        "reputation_risk": 0.29650000000000004,
+        "compliance_bonus": 0.5,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_09",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.22499999999999998,
+        "config_risk": 0.35,
+        "reputation_risk": 0.30450000000000005,
+        "compliance_bonus": 0.0,
+        "weak_auth": 0.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "MED_10",
+      "expected_risk_level": "MEDIUM",
+      "features": {
+        "has_https": 1,
+        "ssl_valid": 0,
+        "encryption_present": 1,
+        "vulnerability_risk": 0.15000000000000002,
+        "config_risk": 0.55,
+        "reputation_risk": 0.28049999999999997,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_01",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.6000000000000001,
+        "config_risk": 1.0,
+        "reputation_risk": 0.7105,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 1.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_02",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.5249999999999999,
+        "config_risk": 1.0,
+        "reputation_risk": 0.44450000000000006,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_03",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.675,
+        "config_risk": 1.0,
+        "reputation_risk": 0.7345,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 1.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_04",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.44999999999999996,
+        "config_risk": 1.0,
+        "reputation_risk": 0.43250000000000005,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_05",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.75,
+        "config_risk": 1.0,
+        "reputation_risk": 0.7425,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 1.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_06",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.6000000000000001,
+        "config_risk": 1.0,
+        "reputation_risk": 0.45250000000000007,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_07",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.5249999999999999,
+        "config_risk": 1.0,
+        "reputation_risk": 0.7225,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 1.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_08",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.675,
+        "config_risk": 1.0,
+        "reputation_risk": 0.4565000000000001,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_09",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.6000000000000001,
+        "config_risk": 1.0,
+        "reputation_risk": 0.7265,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 1.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    },
+    {
+      "service_name": "HIGH_10",
+      "expected_risk_level": "HIGH",
+      "features": {
+        "has_https": 0,
+        "ssl_valid": 0,
+        "encryption_present": 0,
+        "vulnerability_risk": 0.5249999999999999,
+        "config_risk": 1.0,
+        "reputation_risk": 0.43650000000000005,
+        "compliance_bonus": 0.0,
+        "weak_auth": 1.0,
+        "blacklist": 0.0,
+        "whitelist": 0.0,
+        "data_completeness_score": 1.0,
+        "headers_risk": 1.0,
+        "domain_age_risk": 0.05
+      }
+    }
+  ],
+  "ranked_results": [
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.3,
+      "w_reputation": 0.6,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.4,
+      "w_reputation": 0.5,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.5,
+      "w_reputation": 0.4,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.6,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.7,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.5,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.6,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.7,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.8,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.3,
+      "w_reputation": 0.5,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.4,
+      "w_reputation": 0.4,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.4,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.5,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.6,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.4,
+      "w_config": 0.4,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9333,
+      "f1_macro": 0.9327,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.4,
+      "w_config": 0.5,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9333,
+      "f1_macro": 0.9327,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.2,
+      "w_reputation": 0.5,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9,
+      "f1_macro": 0.8977,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.3,
+      "w_reputation": 0.4,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9,
+      "f1_macro": 0.8977,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.4,
+      "w_config": 0.3,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9,
+      "f1_macro": 0.8977,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.4,
+      "w_config": 0.2,
+      "w_reputation": 0.4,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8667,
+      "f1_macro": 0.8611,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.5,
+      "w_config": 0.4,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8667,
+      "f1_macro": 0.8611,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.5,
+      "w_config": 0.2,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8333,
+      "f1_macro": 0.8222,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.5,
+      "w_config": 0.3,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8333,
+      "f1_macro": 0.8222,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.6,
+      "w_config": 0.2,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8333,
+      "f1_macro": 0.8222,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.6,
+      "w_config": 0.3,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.8333,
+      "f1_macro": 0.8222,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.7,
+      "w_config": 0.2,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7667,
+      "f1_macro": 0.7341,
+      "f1_high": 1.0,
+      "fnr_high": 0.0,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.2,
+      "w_reputation": 0.7,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9667,
+      "f1_macro": 0.9666,
+      "f1_high": 0.9474,
+      "fnr_high": 0.1,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.2,
+      "w_reputation": 0.6,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.9,
+      "f1_macro": 0.8995,
+      "f1_high": 0.9474,
+      "fnr_high": 0.1,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.7,
+      "w_config": 0.1,
+      "w_reputation": 0.2,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7333,
+      "f1_macro": 0.7056,
+      "f1_high": 0.9474,
+      "fnr_high": 0.1,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.8,
+      "w_config": 0.1,
+      "w_reputation": 0.1,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7,
+      "f1_macro": 0.6564,
+      "f1_high": 0.9474,
+      "fnr_high": 0.1,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.3,
+      "w_config": 0.1,
+      "w_reputation": 0.6,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7667,
+      "f1_macro": 0.7628,
+      "f1_high": 0.8235,
+      "fnr_high": 0.3,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.4,
+      "w_config": 0.1,
+      "w_reputation": 0.5,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7333,
+      "f1_macro": 0.7264,
+      "f1_high": 0.8235,
+      "fnr_high": 0.3,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.5,
+      "w_config": 0.1,
+      "w_reputation": 0.4,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.6667,
+      "f1_macro": 0.6464,
+      "f1_high": 0.8235,
+      "fnr_high": 0.3,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.6,
+      "w_config": 0.1,
+      "w_reputation": 0.3,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.6667,
+      "f1_macro": 0.6464,
+      "f1_high": 0.8235,
+      "fnr_high": 0.3,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.2,
+      "w_config": 0.1,
+      "w_reputation": 0.7,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7,
+      "f1_macro": 0.6921,
+      "f1_high": 0.75,
+      "fnr_high": 0.4,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "w_vulnerabilities": 0.1,
+      "w_config": 0.1,
+      "w_reputation": 0.8,
+      "threshold_medium": 0.25,
+      "threshold_high": 0.55,
+      "accuracy": 0.7667,
+      "f1_macro": 0.7571,
+      "f1_high": 0.6667,
+      "fnr_high": 0.5,
+      "confusion_matrix": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          0,
+          5,
+          5
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "service_name": "Safe API",
+    "service_url": "https://example.com",
+    "service_type": "AI API",
+    "provider": "Safe Inc",
+    "auth_method": "oauth",
+    "num_known_vulnerabilities": 0,
+    "encryption_present": true,
+    "reputation_score_external": 0.9,
+    "blacklist_flag": false,
+    "gdpr_compliant": true,
+    "iso27001_compliant": true,
+    "expected_risk_level": "LOW"
+  },
+  {
+    "service_name": "Medium API",
+    "service_url": "https://example.org",
+    "service_type": "AI API",
+    "provider": "Medium Inc",
+    "auth_method": "api_key",
+    "num_known_vulnerabilities": 2,
+    "encryption_present": true,
+    "reputation_score_external": 0.5,
+    "blacklist_flag": false,
+    "gdpr_compliant": false,
+    "iso27001_compliant": false,
+    "expected_risk_level": "MEDIUM"
+  },
+  {
+    "service_name": "Risky API",
+    "service_url": "http://127.0.0.1:8001",
+    "service_type": "AI API",
+    "provider": "Risk Inc",
+    "auth_method": "none",
+    "num_known_vulnerabilities": 8,
+    "encryption_present": false,
+    "reputation_score_external": 0.1,
+    "blacklist_flag": true,
+    "gdpr_compliant": false,
+    "iso27001_compliant": false,
+    "expected_risk_level": "HIGH"
+  }
+]

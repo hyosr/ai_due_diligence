@@ -1,60 +1,48 @@
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, Boolean, Float
-from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy.types import JSON
+from sqlalchemy import Column, Integer, String, Float, DateTime, JSON, Text, ForeignKey
+from sqlalchemy.orm import relationship
+from app.core.db import Base
 
-Base = declarative_base()
-
-class Company(Base):
-    __tablename__ = "companies"
+class Service(Base):
+    __tablename__ = "services"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False)
-    website = Column(String(500), nullable=False, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    url = Column(String(1024), nullable=False)
+    service_type = Column(String(100), nullable=True)   # AI API, SaaS, cloud tool
+    provider = Column(String(255), nullable=True)
+    api_endpoint = Column(String(1024), nullable=True)
+    auth_method = Column(String(100), nullable=True)    # OAuth, API Key, None
 
-    sources = relationship("Source", back_populates="company", cascade="all,delete-orphan")
-    assessments = relationship("Assessment", back_populates="company", cascade="all,delete-orphan")
+    metadata_json = Column(JSON, nullable=True, default={})
+    created_at = Column(DateTime, default=datetime.utcnow)
 
-class Source(Base):
-    __tablename__ = "sources"
+    assessments = relationship("Assessment", back_populates="service")
 
-    id = Column(Integer, primary_key=True, index=True)
-    company_id = Column(Integer, ForeignKey("companies.id"), nullable=False, index=True)
-    source_type = Column(String(50), nullable=False)  # website, url, pdf
-    source_url = Column(String(1000), nullable=True)
-    raw_content = Column(Text, nullable=True)
-    fetched_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    metadata_json = Column(JSON, nullable=True)
-
-    company = relationship("Company", back_populates="sources")
 
 class Assessment(Base):
     __tablename__ = "assessments"
-    
+
+    id = Column(Integer, primary_key=True, index=True)
+    service_id = Column(Integer, ForeignKey("services.id"), nullable=False)
+
     status = Column(String(20), nullable=False, default="pending")  # pending|running|done|failed
     error_message = Column(Text, nullable=True)
-    id = Column(Integer, primary_key=True, index=True)
-    company_id = Column(Integer, ForeignKey("companies.id"), nullable=False, index=True)
-    score = Column(Float, nullable=False, default=0.0)
-    confidence = Column(Float, nullable=False, default=0.0)
-    summary = Column(Text, nullable=True)
-    explainability_json = Column(JSON, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
-    company = relationship("Company", back_populates="assessments")
-    signals = relationship("Signal", back_populates="assessment", cascade="all,delete-orphan")
+    risk_score = Column(Float, default=0.0)          # 0..1
+    risk_level = Column(String(20), default="UNKNOWN")  # LOW|MEDIUM|HIGH
+    decision = Column(String(20), default="REVIEW")  # ALLOW|REVIEW|BLOCK
+    confidence = Column(Float, default=0.0)          # 0..1
 
-class Signal(Base):
-    __tablename__ = "signals"
+    reasons_json = Column(JSON, default=[])
+    features_json = Column(JSON, default={})
+    explainability_json = Column(JSON, default={})
+    raw_collection_json = Column(JSON, default={})
 
-    id = Column(Integer, primary_key=True, index=True)
-    assessment_id = Column(Integer, ForeignKey("assessments.id"), nullable=False, index=True)
-    key = Column(String(150), nullable=False, index=True)
-    value = Column(JSON, nullable=True)
-    numeric_value = Column(Float, nullable=True)
-    passed = Column(Boolean, nullable=True)
-    weight = Column(Float, nullable=False, default=0.0)
-    rationale = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
 
-    assessment = relationship("Assessment", back_populates="signals")
+    service = relationship("Service", back_populates="assessments")
+
+    policy_id = Column(String(50), nullable=True)
+    policy_reason = Column(Text, nullable=True)
+    policy_matches_json = Column(JSON, default=[])
