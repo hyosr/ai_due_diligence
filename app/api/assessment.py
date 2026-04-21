@@ -9,6 +9,14 @@ from app.models.models import Service, Assessment
 from app.schemas.schemas import ServiceInput, ServiceCreateResponse, AssessmentRunResponse, AssessmentOut
 from app.services.runner import run_assessment_job
 
+from fastapi import APIRouter, Header, HTTPException
+
+
+from ml.predictor import predict_risk, explain_prediction
+
+from app.core.db import SessionLocal
+ 
+
 
 router = APIRouter(prefix="/assessment", tags=["assessment"], dependencies=[Depends(require_api_key)])
 
@@ -138,3 +146,13 @@ def get_assessment_raw(assessment_id: int, db: Session = Depends(get_db)):
         "explainability": a.explainability_json or {},
         "raw_collection": a.raw_collection_json or {},
     }
+
+
+
+
+
+
+
+
+
+

@@ -18,3 +18,17 @@ app.include_router(report_router)
 @app.get("/")
 def health():
     return {"status": "ok", "service": "ai-due-diligence-zero-trust"}
+
+
+
+
+@app.get("/debug/config")
+def debug_config():
+    from app.core.config import settings
+    return {
+        "threshold_medium": settings.threshold_medium,
+        "threshold_high": settings.threshold_high,
+        "w_vulnerabilities": settings.w_vulnerabilities,
+        "w_config": settings.w_config,
+        "w_reputation": settings.w_reputation,
+    }

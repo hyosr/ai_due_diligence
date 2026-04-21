@@ -8,8 +8,13 @@ def clamp01(x: float) -> float:
 def extract_features(payload: dict, collected: dict) -> Dict[str, Any]:
     has_https = 1 if str(payload.get("service_url", "")).startswith("https://") else 0
     ssl_valid = 1 if (payload.get("ssl_certificate_present") is True or collected.get("ssl_valid") is True) else 0
-    encryption_present = 1 if payload.get("encryption_present") is True else 0
+    # encryption_present = 1 if payload.get("encryption_present") is True else 0
 
+
+    if has_https == 1 and ssl_valid == 1:
+        encryption_present = 1
+    else:
+        encryption_present = 1 if payload.get("encryption_present") is True else 0
 
 
     headers_score = payload.get("security_headers_score")
@@ -41,16 +46,47 @@ def extract_features(payload: dict, collected: dict) -> Dict[str, Any]:
     gdpr = 1.0 if payload.get("gdpr_compliant") is True else 0.0
     iso = 1.0 if payload.get("iso27001_compliant") is True else 0.0
 
+
+    if gdpr == 1.0 or iso == 1.0:
+        compliance_bonus = 0.9  
+    else:
+        compliance_bonus = 0.0
+    if gdpr == 1.0 and iso == 1.0:
+        compliance_bonus = 1.0
+
     auth_method = (payload.get("auth_method") or "").lower()
     weak_auth = 1.0 if auth_method in ("", "none", "basic") else 0.0
+
+#     config_risk = clamp01(
+#     (1 - has_https) * 0.25 +
+#     (1 - ssl_valid) * 0.20 +
+#     (1 - encryption_present) * 0.20 +
+#     weak_auth * 0.20 +
+#     headers_risk * 0.15
+# )
+
+
+
 
     config_risk = clamp01(
     (1 - has_https) * 0.25 +
     (1 - ssl_valid) * 0.20 +
-    (1 - encryption_present) * 0.20 +
+    (1 - encryption_present) * 0.10 +   # ← diminué de 0.20 à 0.10
     weak_auth * 0.20 +
     headers_risk * 0.15
 )
+    
+
+
+    # Augmentation du compliance_bonus pour GDPR seul
+    gdpr = 1.0 if payload.get("gdpr_compliant") is True else 0.0
+    iso = 1.0 if payload.get("iso27001_compliant") is True else 0.0
+
+    # Bonus augmenté : 0.9 si GDPR, 0.9 si ISO, sinon 0
+    if gdpr == 1.0 or iso == 1.0:
+        compliance_bonus = 0.9
+    else:
+        compliance_bonus = 0.0
 
     reputation_risk = clamp01(
         rep_risk * 0.40 +

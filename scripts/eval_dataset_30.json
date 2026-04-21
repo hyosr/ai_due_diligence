@@ -32,3 +32,8 @@
   { "service_name":"HIGH_09","service_url":"http://high09.example.com","service_type":"AI API","provider":"ShadowAI","auth_method":"none","num_known_vulnerabilities":8,"encryption_present":false,"reputation_score_external":0.14,"blacklist_flag":true,"gdpr_compliant":false,"iso27001_compliant":false,"expected_risk_level":"HIGH" },
   { "service_name":"HIGH_10","service_url":"http://high10.example.com","service_type":"SaaS","provider":"DangerSuite","auth_method":"basic","num_known_vulnerabilities":7,"encryption_present":false,"reputation_score_external":0.24,"blacklist_flag":false,"gdpr_compliant":false,"iso27001_compliant":false,"expected_risk_level":"HIGH" }
 ]
+
+
+
+
+

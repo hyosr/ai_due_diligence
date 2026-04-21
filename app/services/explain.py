@@ -27,5 +27,7 @@ def build_explainability(features: dict, scored: dict, reasons: list[str]) -> di
         "model_type": "rules_weighted_v1",
         "features": features,
         "scoring": scored,
-        "reasons": reasons
+        "reasons": reasons,
+        "model_source": scored.get("model_source", "rules_only"),
+        "ml": scored.get("ml"),
     }
