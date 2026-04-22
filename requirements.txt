@@ -17,3 +17,6 @@ pandas==2.2.2
 scikit-learn==1.5.2
 joblib==1.4.2
 numpy==2.1.2
+aiohttp
+pyOpenSSL
+

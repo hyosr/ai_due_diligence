@@ -37,26 +37,43 @@ def create_service(payload: ServiceInput, db: Session = Depends(get_db)):
     return {"service_id": s.id, "status": "accepted"}
 
 
-@router.post("/run/{service_id}", response_model=AssessmentRunResponse)
+# @router.post("/run/{service_id}", response_model=AssessmentRunResponse)
+# async def run_assessment(service_id: int, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+#     s = db.query(Service).filter(Service.id == service_id).first()
+#     if not s:
+#         raise HTTPException(status_code=404, detail="Service not found")
+
+#     a = Assessment(service_id=s.id, status="pending")
+#     db.add(a)
+#     db.commit()
+#     db.refresh(a)
+
+#     async def _job(aid: int):
+#         local_db = SessionLocal()
+#         try:
+#             await run_assessment_job(local_db, aid)
+#         finally:
+#             local_db.close()
+
+#     background_tasks.add_task(_job, a.id)
+#     return {"assessment_id": a.id, "status": "pending"}
+
+
+
+@router.post("/run/{service_id}")
 async def run_assessment(service_id: int, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
     s = db.query(Service).filter(Service.id == service_id).first()
     if not s:
-        raise HTTPException(status_code=404, detail="Service not found")
-
+        raise HTTPException(404, "Service not found")
+    # Créer TOUJOURS un nouvel assessment
     a = Assessment(service_id=s.id, status="pending")
     db.add(a)
     db.commit()
     db.refresh(a)
-
-    async def _job(aid: int):
-        local_db = SessionLocal()
-        try:
-            await run_assessment_job(local_db, aid)
-        finally:
-            local_db.close()
-
-    background_tasks.add_task(_job, a.id)
+    background_tasks.add_task(run_assessment_job, a.id)
     return {"assessment_id": a.id, "status": "pending"}
+
+
 
 
 @router.get("/{assessment_id}", response_model=AssessmentOut)

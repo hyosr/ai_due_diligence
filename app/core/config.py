@@ -6,13 +6,21 @@ class Settings(BaseSettings):
     api_key: str = "super-secret-key"  # ou laissez vide
 
     # scoring weights
-    w_vulnerabilities: float = 0.1
+    # w_vulnerabilities: float = 0.1
     w_config: float = 0.3
-    w_reputation: float = 0.6
+    # w_reputation: float = 0.6
 
     # thresholds (directement définis)
     threshold_high: float = 0.7
     threshold_medium: float = 0.4
+
+
+    w_auth: float = 0.20
+    w_tls: float = 0.20
+    w_headers: float = 0.15
+    w_vulnerabilities: float = 0.30
+    w_reputation: float = 0.15
+    ml_weight: float = 0.3
 
     ml_model_path: str = "artifacts/risk_model.joblib"
 
