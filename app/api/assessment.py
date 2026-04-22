@@ -70,7 +70,10 @@ async def run_assessment(service_id: int, background_tasks: BackgroundTasks, db:
     db.add(a)
     db.commit()
     db.refresh(a)
-    background_tasks.add_task(run_assessment_job, a.id)
+    # background_tasks.add_task(run_assessment_job, a.id)
+    # background_tasks.add_task(run_assessment_job, db, a.id)
+    background_tasks.add_task(run_assessment_job, a.id)   # ✅ un seul argument
+
     return {"assessment_id": a.id, "status": "pending"}
 
 
@@ -160,6 +163,8 @@ def get_assessment_raw(assessment_id: int, db: Session = Depends(get_db)):
         "reasons": a.reasons_json or [],
         "features": a.features_json or {},
         "contributions": (a.explainability_json or {}).get("contributions", []),
+        "contributions_json": a.contributions_json or [],   # <-- ajout
+        "contributions": a.contributions_json or [],        # pour compatibilité front
         "explainability": a.explainability_json or {},
         "raw_collection": a.raw_collection_json or {},
     }

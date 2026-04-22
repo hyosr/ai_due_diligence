@@ -199,6 +199,12 @@ if submitted:
         # 4. Fetch raw data for contributions and policy
         raw = call_json("GET", f"{cfg.base_url}/assessment/raw/{assessment_id}", cfg, timeout=60)
 
+
+
+
+
+
+
         # ---- Display results in a structured way ----
         st.success("Assessment completed successfully!")
 
@@ -213,7 +219,22 @@ if submitted:
         st.markdown("### 🧭 Final Decision")
         render_decision_badge(details.get("decision"))
         st.markdown("### 🧾 Justifications")
+
         render_reason_chips(details.get("reasons", []))
+
+
+        contributions = raw.get("contributions_json", [])   # Utilise la colonne persistée
+        if contributions:
+            st.markdown("### 📊 Détail des contributions")
+            df_contrib = pd.DataFrame(contributions)
+            # Mettre en forme
+            df_contrib["value"] = df_contrib["value"].round(4)
+            df_contrib["weight"] = df_contrib["weight"].round(4)
+            df_contrib["contribution"] = df_contrib["contribution"].round(4)
+            st.dataframe(df_contrib, use_container_width=True)
+        else:
+            st.info("Aucune contribution détaillée disponible pour cet assessment.")
+
 
         # Row 3: Policy engine details
         with st.expander("Policy Engine Details", expanded=False):

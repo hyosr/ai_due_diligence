@@ -46,3 +46,5 @@ class Assessment(Base):
     policy_id = Column(String(50), nullable=True)
     policy_reason = Column(Text, nullable=True)
     policy_matches_json = Column(JSON, default=[])
+
+    contributions_json = Column(JSON, default=[])
