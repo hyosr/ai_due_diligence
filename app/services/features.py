@@ -47,6 +47,12 @@ def extract_features(payload: dict, collected: dict) -> Dict[str, Any]:
     iso = 1.0 if payload.get("iso27001_compliant") is True else 0.0
 
 
+    # Après avoir récupéré gdpr et iso depuis le payload, vous pouvez faire :
+    gdpr = 1.0 if (payload.get("gdpr_compliant") or live.get("gdpr_compliant")) else 0.0
+    soc2 = 1.0 if (payload.get("soc2_detected") or live.get("soc2_detected")) else 0.0
+
+
+
     if gdpr == 1.0 or iso == 1.0:
         compliance_bonus = 0.9  
     else:

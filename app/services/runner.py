@@ -12,7 +12,7 @@ from app.services.connectors.domain_age import get_domain_age_signal
 
 from app.core.db import SessionLocal   # ajoutez cet import en haut
 
-
+from app.services.feature_collector import collect_all_features
 
 
 
@@ -42,6 +42,30 @@ async def run_assessment_job(assessment_id: int):
 
             # 1) Base collection
             collected = await collect_runtime_data(s.url, s.api_endpoint)
+
+
+
+
+
+
+                        # ========== NOUVEAU : collecte enrichie (pages légales, SOC2, etc.) ==========
+            from app.core.config import settings
+            live_features, legal_raw = await collect_all_features(
+                s.url,
+                shodan_api_key=getattr(settings, "SHODAN_API_KEY", None)
+            )
+            # Fusionner les nouvelles features dans le payload (pour qu'elles soient utilisées par extract_features)
+            for key, value in live_features.items():
+                if key not in payload:
+                    payload[key] = value
+            # Stocker les textes bruts des pages légales dans collected (pour audit)
+            collected["legal_raw"] = legal_raw
+
+
+
+
+
+            
 
             # 2) SSL deep scan
             ssl_info = ssl_deep_scan(s.url)

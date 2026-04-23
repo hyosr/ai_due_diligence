@@ -15,6 +15,7 @@ import certifi
 import OpenSSL
 from aiohttp import ClientTimeout, ClientSession
 
+from app.services.connectors.legal_scraper import find_legal_pages, fetch_text, collect_legal_insights
 
 async def get_http_headers(url: str) -> dict:
     """Fetch HTTP headers (follows redirects, uses HTTPS if possible)."""
@@ -151,10 +152,10 @@ async def external_reputation_shodan(hostname: str, api_key: str = None) -> dict
         return {"score": None, "vulns": []}
 
 
-async def collect_all_features(service_url: str, shodan_api_key: str = None) -> dict:
+async def collect_all_features(service_url: str, shodan_api_key: str = None) -> tuple:
     """
     Main entry point: collect all features for a given service URL.
-    Returns a dictionary with the enriched features.
+    Returns a tuple: (features_dict, legal_raw_dict)
     """
     parsed = urlparse(service_url)
     hostname = parsed.hostname
@@ -165,6 +166,7 @@ async def collect_all_features(service_url: str, shodan_api_key: str = None) -> 
     headers = await get_http_headers(service_url)
     # 2. TLS / certificate
     tls_info = await check_tls_version(hostname)
+
     # 3. Security headers
     features = {
         "has_https": service_url.startswith("https"),
@@ -208,7 +210,14 @@ async def collect_all_features(service_url: str, shodan_api_key: str = None) -> 
     features["known_vulnerabilities_count"] = len(ext_rep["vulns"])
 
     # 7. Rate limiting / API security – not easily detected; placeholder
-    features["rate_limiting_detected"] = False  # could be checked via headers like `x-ratelimit-*`
+    features["rate_limiting_detected"] = False
     features["api_key_rotation_supported"] = False
 
-    return features
+    # ========== NOUVEAU : Analyse des pages légales (NLP + SOC2) ==========
+    legal_insights = await collect_legal_insights(service_url)
+    # Fusionner les nouvelles features
+    features.update(legal_insights["features"])
+    # Récupérer les textes bruts pour audit
+    legal_raw = legal_insights["raw_pages"]
+
+    return features, legal_raw
